@@ -40,9 +40,7 @@ temp = abs(rawtemp)
 #PH Sensor Reading, and Calculations
 phdata = os.popen('i2cget -y 1 0x48').read()
 APH = float.fromhex(phdata)
-PH1 = abs(APH)
-PH2 = PH1 * 5.0 / 1024
-phfinal = 3.5 * PH2
+PH1 = (abs(APH) * 0.15) - 8
 
 #Temperature correction calculations
 
